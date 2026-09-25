@@ -1,0 +1,27 @@
+# .env — local environment variables
+# SECURITY: Never commit this file. It is excluded via .gitignore.
+.env
+.env.*
+!.env.example
+
+# Dependencies
+node_modules/
+.pnp
+.pnp.js
+
+# Production build output
+dist/
+dist-ssr/
+*.local
+
+# Editor / OS artifacts
+.DS_Store
+Thumbs.db
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# TypeScript build cache
+*.tsbuildinfo

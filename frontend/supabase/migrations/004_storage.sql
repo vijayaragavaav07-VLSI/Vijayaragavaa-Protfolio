@@ -1,0 +1,38 @@
+﻿-- ============================================================
+-- 004_storage.sql
+-- Storage Configuration — DOCUMENTATION ONLY
+-- ============================================================
+--
+-- DO NOT EXECUTE this file in the Supabase SQL Editor.
+-- Attempting to modify storage.objects from this migration
+-- will fail with: ERROR 42501: must be owner of table objects
+--
+-- The portfolio-media bucket and all Storage policies have
+-- been configured manually in the Supabase Dashboard and
+-- are already active. No SQL action is required here.
+--
+-- MANUAL SETUP (already complete):
+--
+-- Bucket: portfolio-media
+--   - public: true
+--   - file_size_limit: 10 MB (10485760 bytes)
+--   - allowed_mime_types: image/jpeg, image/png, image/webp,
+--                          image/gif, application/pdf
+--
+-- Storage Policies (created in Supabase Dashboard):
+--   1. "Public Read Access - portfolio-media"
+--      → FOR SELECT to anon: bucket_id = 'portfolio-media'
+--
+--   2. "Admin Upload Access - portfolio-media"
+--      → FOR INSERT to authenticated: public.is_admin() = true
+--
+--   3. "Admin Update Access - portfolio-media"
+--      → FOR UPDATE to authenticated: public.is_admin() = true
+--
+--   4. "Admin Delete Access - portfolio-media"
+--      → FOR DELETE to authenticated: public.is_admin() = true
+--
+-- These policies depend on public.is_admin() defined in
+-- 003_admin_auth.sql, which must be applied before Storage
+-- upload from authenticated admin users will work.
+-- ============================================================

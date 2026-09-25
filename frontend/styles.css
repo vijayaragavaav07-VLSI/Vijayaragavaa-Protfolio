@@ -1,0 +1,9 @@
+/*
+ * ARCHITECTURE NOTICE:
+ * This project uses Tailwind CSS v4 configured via @tailwindcss/vite.
+ * The active global stylesheet and design system tokens are located at:
+ * src/index.css
+ *
+ * All styles, colors (cyan accent #00d9ff, dark bg #030609), fonts (JetBrains Mono,
+ * Space Grotesk), and semiconductor grid utility classes are declared in src/index.css.
+ */
