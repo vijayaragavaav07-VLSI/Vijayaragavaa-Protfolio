@@ -1,23 +1,8 @@
-// ============================================================
-// Database TypeScript Types
-// Auto-synced to the Supabase SQL schema in:
-//   supabase/migrations/001_initial_schema.sql
-//
-// Keep these types in sync with the database tables.
-// Separate from UI types in portfolio.ts
+﻿// ============================================================
+// Database TypeScript Types â€” synced to migrations 001-007
 // ============================================================
 
-export type Json =
-  | string
-  | number
-  | boolean
-  | null
-  | { [key: string]: Json | undefined }
-  | Json[];
-
-// ============================================================
-// Row types — represent exact columns in the DB
-// ============================================================
+export type Json = string | number | boolean | null | { [key: string]: Json | undefined } | Json[];
 
 export interface Profile {
   id: string;
@@ -58,6 +43,14 @@ export interface HomeContent {
   youtube_url: string | null;
   resume_url: string | null;
   visible: boolean;
+  tags: string;
+  eda_tools: string;
+  domain_discipline: string;
+  hdl_syntax: string;
+  verification_method: string;
+  ieee_ref: string;
+  die_specimen_url: string | null;
+  status_cap: string;
   created_at: string;
   updated_at: string;
 }
@@ -72,6 +65,17 @@ export interface AboutContent {
   primary_focus: string;
   target_hardware: string;
   visible: boolean;
+  profile_icon_url: string | null;
+  philosophy_title: string;
+  principle_1_num: string;
+  principle_1_title: string;
+  principle_1_desc: string;
+  principle_2_num: string;
+  principle_2_title: string;
+  principle_2_desc: string;
+  principle_3_num: string;
+  principle_3_title: string;
+  principle_3_desc: string;
   created_at: string;
   updated_at: string;
 }
@@ -118,6 +122,8 @@ export interface Hackathon {
   architecture_url: string | null;
   sort_order: number;
   published: boolean;
+  prototype_label: string;
+  sprint_label: string;
   created_at: string;
   updated_at: string;
 }
@@ -214,6 +220,16 @@ export interface Resume {
   updated_at: string;
 }
 
+export interface ContactMessage {
+  id: string;
+  name: string;
+  email: string;
+  subject: string | null;
+  message: string;
+  is_read: boolean;
+  created_at: string;
+}
+
 // ============================================================
 // Database shape for Supabase typed client
 // ============================================================
@@ -290,6 +306,11 @@ export interface Database {
         Row: Resume;
         Insert: Omit<Resume, 'id' | 'created_at' | 'updated_at'>;
         Update: Partial<Omit<Resume, 'id' | 'created_at' | 'updated_at'>>;
+      };
+      contact_messages: {
+        Row: ContactMessage;
+        Insert: Omit<ContactMessage, 'id' | 'created_at'>;
+        Update: Partial<Omit<ContactMessage, 'id' | 'created_at'>>;
       };
     };
     Views: Record<string, never>;

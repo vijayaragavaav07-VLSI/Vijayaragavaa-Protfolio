@@ -1,4 +1,4 @@
-export interface HomeData {
+﻿export interface HomeData {
   name1: string;
   name2: string;
   badge: string;
@@ -24,6 +24,7 @@ export interface AboutData {
   ptitle: string;
   bio: string;
   pr: string;
+  profile_icon_url?: string;
 }
 
 export interface SkillCategory {
@@ -33,6 +34,8 @@ export interface SkillCategory {
   items: string; // "Skill | detail\nSkill | detail"
   foot: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface Project {
@@ -45,6 +48,8 @@ export interface Project {
   link?: string;
   img?: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface Hackathon {
@@ -57,6 +62,8 @@ export interface Hackathon {
   outcome: string;
   img?: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface Achievement {
@@ -67,6 +74,8 @@ export interface Achievement {
   link?: string;
   img?: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface Certification {
@@ -77,6 +86,8 @@ export interface Certification {
   cid: string;
   link?: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface Education {
@@ -87,6 +98,8 @@ export interface Education {
   score?: string;
   desc: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface Experience {
@@ -96,6 +109,8 @@ export interface Experience {
   desc: string;
   tech: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface GalleryItem {
@@ -103,6 +118,8 @@ export interface GalleryItem {
   cat?: string;
   img: string;
   hide?: boolean;
+  prototype_label?: string;
+  sprint_label?: string;
 }
 
 export interface ContactData {

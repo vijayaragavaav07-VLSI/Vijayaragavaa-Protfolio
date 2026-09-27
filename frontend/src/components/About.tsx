@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import type { AboutData } from '../types/portfolio';
 import { SectionHeader } from './SectionHeader';
 
@@ -37,10 +37,20 @@ export const About: React.FC<AboutProps> = ({ data }) => {
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
           {/* Left Column: Profile Card (5 cols) */}
           <div className="lg:col-span-5 card-tech p-6 sm:p-8">
-            {/* Monospace Code Icon */}
-            <div className="w-16 h-16 sm:w-20 sm:h-20 border border-[#00d9ff] rounded-lg flex items-center justify-center font-mono font-bold text-2xl sm:text-3xl text-[#00d9ff] bg-[#062434] mb-6 shadow-[0_0_20px_rgba(0,217,255,0.25)]">
-              {'{ }'}
-            </div>
+            {/* Monospace Code Icon or Profile Icon */}
+            {data.profile_icon_url ? (
+              <div className="w-16 h-16 sm:w-20 sm:h-20 border border-[#00d9ff] rounded-lg overflow-hidden bg-[#062434] mb-6 shadow-[0_0_20px_rgba(0,217,255,0.25)] flex items-center justify-center">
+                <img
+                  src={data.profile_icon_url}
+                  alt={data.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+            ) : (
+              <div className="w-16 h-16 sm:w-20 sm:h-20 border border-[#00d9ff] rounded-lg flex items-center justify-center font-mono font-bold text-2xl sm:text-3xl text-[#00d9ff] bg-[#062434] mb-6 shadow-[0_0_20px_rgba(0,217,255,0.25)]">
+                {'{ }'}
+              </div>
+            )}
 
             <h3 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-1">
               {data.name}

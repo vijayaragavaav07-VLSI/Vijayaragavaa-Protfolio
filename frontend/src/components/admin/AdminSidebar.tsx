@@ -1,43 +1,63 @@
-import { NavLink } from 'react-router-dom';
-import { useAuth } from '../../context/AuthContext';
-import { 
-  LayoutDashboard, 
-  Home, 
-  User, 
-  Code, 
-  Briefcase, 
-  Cpu, 
-  Trophy, 
-  Award, 
-  GraduationCap, 
-  Clock, 
-  Image as ImageIcon, 
-  Mail, 
-  FileText, 
+﻿import { useState, useEffect } from "react";
+import { NavLink } from "react-router-dom";
+import { useAuth } from "../../context/AuthContext";
+import { supabase } from "../../lib/supabase";
+import {
+  LayoutDashboard,
+  Home,
+  User,
+  Code,
+  Briefcase,
+  Cpu,
+  Trophy,
+  Award,
+  GraduationCap,
+  Clock,
+  Image as ImageIcon,
+  Mail,
+  MessageSquare,
+  FileText,
   Settings,
   LogOut,
-  X
-} from 'lucide-react';
-
-const NAV_ITEMS = [
-  { path: '/admin', label: 'Dashboard', icon: LayoutDashboard, exact: true },
-  { path: '/admin/home', label: 'Home', icon: Home },
-  { path: '/admin/about', label: 'About', icon: User },
-  { path: '/admin/skills', label: 'Skills', icon: Code },
-  { path: '/admin/projects', label: 'Projects', icon: Briefcase },
-  { path: '/admin/hackathons', label: 'Hackathons', icon: Cpu },
-  { path: '/admin/achievements', label: 'Achievements', icon: Trophy },
-  { path: '/admin/certifications', label: 'Certifications', icon: Award },
-  { path: '/admin/education', label: 'Education', icon: GraduationCap },
-  { path: '/admin/experience', label: 'Experience', icon: Clock },
-  { path: '/admin/gallery', label: 'Gallery', icon: ImageIcon },
-  { path: '/admin/contact', label: 'Contact', icon: Mail },
-  { path: '/admin/resume', label: 'Resume', icon: FileText },
-  { path: '/admin/settings', label: 'Settings', icon: Settings },
-];
+  X,
+} from "lucide-react";
 
 export const AdminSidebar = ({ onClose }: { onClose?: () => void }) => {
   const { user, signOut } = useAuth();
+  const [unreadCount, setUnreadCount] = useState(0);
+
+  useEffect(() => {
+    const fetchUnread = async () => {
+      const { count } = await supabase
+        .from("contact_messages")
+        .select("*", { count: "exact", head: true })
+        .eq("is_read", false);
+      setUnreadCount(count || 0);
+    };
+    fetchUnread();
+
+    // Refresh every 60 seconds
+    const interval = setInterval(fetchUnread, 60000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const NAV_ITEMS = [
+    { path: "/admin", label: "Dashboard", icon: LayoutDashboard, exact: true },
+    { path: "/admin/home", label: "Home", icon: Home },
+    { path: "/admin/about", label: "About", icon: User },
+    { path: "/admin/skills", label: "Skills", icon: Code },
+    { path: "/admin/projects", label: "Projects", icon: Briefcase },
+    { path: "/admin/hackathons", label: "Hackathons", icon: Cpu },
+    { path: "/admin/achievements", label: "Achievements", icon: Trophy },
+    { path: "/admin/certifications", label: "Certifications", icon: Award },
+    { path: "/admin/education", label: "Education", icon: GraduationCap },
+    { path: "/admin/experience", label: "Experience", icon: Clock },
+    { path: "/admin/gallery", label: "Gallery", icon: ImageIcon },
+    { path: "/admin/contact", label: "Contact", icon: Mail },
+    { path: "/admin/messages", label: "Messages", icon: MessageSquare, badge: unreadCount },
+    { path: "/admin/resume", label: "Resume", icon: FileText },
+    { path: "/admin/settings", label: "Settings", icon: Settings },
+  ];
 
   return (
     <div className="w-64 h-full bg-[#07111f] border-r border-[#1a2b44] flex flex-col">
@@ -64,15 +84,22 @@ export const AdminSidebar = ({ onClose }: { onClose?: () => void }) => {
               end={item.exact}
               onClick={onClose}
               className={({ isActive }) =>
-                `flex items-center px-3 py-2.5 rounded text-sm font-mono tracking-wider transition-colors ${
+                `flex items-center justify-between px-3 py-2.5 rounded text-sm font-mono tracking-wider transition-colors ${
                   isActive
-                    ? 'bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/30'
-                    : 'text-[#8ea3bd] hover:bg-[#1a2b44] hover:text-white border border-transparent'
+                    ? "bg-[#00d9ff]/10 text-[#00d9ff] border border-[#00d9ff]/30"
+                    : "text-[#8ea3bd] hover:bg-[#1a2b44] hover:text-white border border-transparent"
                 }`
               }
             >
-              <item.icon className="w-4 h-4 mr-3" />
-              {item.label}
+              <span className="flex items-center">
+                <item.icon className="w-4 h-4 mr-3" />
+                {item.label}
+              </span>
+              {"badge" in item && (item.badge ?? 0) > 0 && (
+                <span className="bg-[#00d9ff] text-[#030609] text-[10px] font-bold px-1.5 py-0.5 rounded-full min-w-[18px] text-center">
+                  {item.badge}
+                </span>
+              )}
             </NavLink>
           ))}
         </nav>
@@ -80,7 +107,7 @@ export const AdminSidebar = ({ onClose }: { onClose?: () => void }) => {
 
       {/* Sidebar Footer */}
       <div className="p-4 border-t border-[#1a2b44] bg-[#040810]">
-        <div className="text-[10px] font-mono text-[#4a5f78] mb-2 truncate" title={user?.email || ''}>
+        <div className="text-[10px] font-mono text-[#4a5f78] mb-2 truncate" title={user?.email || ""}>
           {user?.email}
         </div>
         <button

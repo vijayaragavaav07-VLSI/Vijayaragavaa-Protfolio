@@ -1,4 +1,4 @@
-import React from 'react';
+﻿import React from 'react';
 import type { Hackathon } from '../types/portfolio';
 import { SectionHeader } from './SectionHeader';
 import { CheckCircle2, ArrowRight } from 'lucide-react';
@@ -109,8 +109,8 @@ export const Hackathons: React.FC<HackathonsProps> = ({ hackathons, onExamineArc
                       <div className="absolute inset-0 bg-gradient-to-t from-[#06121f] via-transparent to-transparent opacity-60" />
                     </div>
                     <div className="flex justify-between items-center p-3.5 bg-[#050c16] border-t border-[#10304d] font-mono text-xs">
-                      <span className="text-white font-medium">LIVE PROTOTYPE BENCH</span>
-                      <span className="text-[#00d9ff] font-semibold">PITCH: 36 HRS SPRINT</span>
+                      <span className="text-white font-medium">{item.prototype_label || "LIVE PROTOTYPE BENCH"}</span>
+                      <span className="text-[#00d9ff] font-semibold">{item.sprint_label || "PITCH: 36 HRS SPRINT"}</span>
                     </div>
                   </div>
                 </div>

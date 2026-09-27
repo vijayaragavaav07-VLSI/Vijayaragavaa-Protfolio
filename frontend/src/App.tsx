@@ -50,6 +50,12 @@ export function App() {
     badge: db.home.data.badge_text || staticData.home.badge,
     desc: db.home.data.hero_description || staticData.home.desc,
     role: db.home.data.hero_title || staticData.home.role,
+    sub: db.home.data.hero_highlight || staticData.home.sub,
+    tags: (db.home.data as any).tags || staticData.home.tags,
+    photo: db.home.data.profile_image_url || staticData.home.photo,
+    cap: (db.home.data as any).status_cap || staticData.home.cap,
+    eda: (db.home.data as any).eda_tools || staticData.home.eda,
+    die: (db.home.data as any).die_specimen_url || staticData.home.die,
   } : staticData.home;
 
   // About
@@ -60,6 +66,15 @@ export function App() {
     spec: db.about.data.specialization || staticData.about.spec,
     focus: db.about.data.primary_focus || staticData.about.focus,
     hw: db.about.data.target_hardware || staticData.about.hw,
+    ptitle: (db.about.data as any).philosophy_title || staticData.about.ptitle,
+    pr: ((db.about.data as any).principle_1_title || (db.about.data as any).principle_2_title || (db.about.data as any).principle_3_title)
+      ? [
+          `${(db.about.data as any).principle_1_title || ""} | ${(db.about.data as any).principle_1_desc || ""}`,
+          `${(db.about.data as any).principle_2_title || ""} | ${(db.about.data as any).principle_2_desc || ""}`,
+          `${(db.about.data as any).principle_3_title || ""} | ${(db.about.data as any).principle_3_desc || ""}`,
+        ].filter((l) => l.trim() !== "|").join("\n")
+      : staticData.about.pr,
+    profile_icon_url: (db.about.data as any).profile_icon_url || undefined,
   } : staticData.about;
 
   // Skills
@@ -109,6 +124,8 @@ export function App() {
           team: h.team_size || '',
           outcome: h.outcome || '',
           img: h.image_url || undefined,
+          prototype_label: (h as any).prototype_label || undefined,
+          sprint_label: (h as any).sprint_label || undefined,
         }))
     : staticData.hackathons;
 
