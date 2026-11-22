@@ -1,4 +1,4 @@
-﻿import React from 'react';
+import React from 'react';
 import type { AboutData } from '../types/portfolio';
 import { SectionHeader } from './SectionHeader';
 import { Cpu, ShieldCheck, Zap } from 'lucide-react';
@@ -89,7 +89,54 @@ export const About: React.FC<AboutProps> = ({ data }) => {
             </div>
           </div>
 
-          {/* Right Column: Engineering Philosophy & Principles (7 cols) */}
+          {/* New VLSI Engineering Profile Section */}
+<div className="mt-6">
+  <h3 className="text-lg font-bold uppercase text-white mb-3">VLSI ENGINEERING PROFILE</h3>
+  {/* Engineering Interests */}
+  <div className="grid grid-cols-2 gap-4 mb-4">
+    <div className="bg-[#051528] border border-[#00d9ff] p-3 rounded-lg hover:border-[#00d9ff]/50 transition-colors">
+      <div className="flex items-center gap-2 mb-2">
+        <Cpu className="w-4 h-4 text-[#00d9ff]" />
+        <h4 className="text-sm font-semibold text-white">RTL Design</h4>
+      </div>
+      <p className="text-xs text-[#8ea3bd]">Verilog, SystemVerilog.</p>
+    </div>
+    <div className="bg-[#051528] border border-[#00d9ff] p-3 rounded-lg hover:border-[#00d9ff]/50 transition-colors">
+      <div className="flex items-center gap-2 mb-2">
+        <Zap className="w-4 h-4 text-[#00d9ff]" />
+        <h4 className="text-sm font-semibold text-white">FPGA Design</h4>
+      </div>
+      <p className="text-xs text-[#8ea3bd]">Digital implementation.</p>
+    </div>
+    <div className="bg-[#051528] border border-[#00d9ff] p-3 rounded-lg hover:border-[#00d9ff]/50 transition-colors">
+      <div className="flex items-center gap-2 mb-2">
+        <ShieldCheck className="w-4 h-4 text-[#00d9ff]" />
+        <h4 className="text-sm font-semibold text-white">ASIC Design</h4>
+      </div>
+      <p className="text-xs text-[#8ea3bd]">Digital hardware.</p>
+    </div>
+    <div className="bg-[#051528] border border-[#00d9ff] p-3 rounded-lg hover:border-[#00d9ff]/50 transition-colors">
+      <div className="flex items-center gap-2 mb-2">
+        <ShieldCheck className="w-4 h-4 text-[#00d9ff]" />
+        <h4 className="text-sm font-semibold text-white">Design Verification</h4>
+      </div>
+      <p className="text-xs text-[#8ea3bd]">Simulation, Testbench.</p>
+    </div>
+  </div>
+  {/* Engineering Mindset */}
+  <div className="bg-[#051527] border border-[#00d9ff]/30 p-4 rounded-lg mb-4">
+    <h4 className="text-sm font-bold uppercase text-[#00d9ff] mb-2">THINK. DESIGN. BUILD.</h4>
+    <p className="text-xs text-[#8ea3bd]">Transforming digital logic concepts into practical hardware solutions.</p>
+  </div>
+  {/* Current Engineering Focus Tags */}
+  <div className="flex flex-wrap gap-2">
+    <span className="border border-[#102a45] bg-[#06182c]/80 text-[#7dd3fc] font-mono text-[10.5px] px-2.5 py-0.5 rounded tracking-wider uppercase hover:border-[#00d9ff]/50 transition-colors">RTL Design</span>
+    <span className="border border-[#102a45] bg-[#06182c]/80 text-[#7dd3fc] font-mono text-[10.5px] px-2.5 py-0.5 rounded tracking-wider uppercase hover:border-[#00d9ff]/50 transition-colors">FPGA Implementation</span>
+    <span className="border border-[#102a45] bg-[#06182c]/80 text-[#7dd3fc] font-mono text-[10.5px] px-2.5 py-0.5 rounded tracking-wider uppercase hover:border-[#00d9ff]/50 transition-colors">Design Verification</span>
+  </div>
+</div>
+
+{/* Right Column: Engineering Philosophy \u0026 Principles (7 cols) */}
           <div className="lg:col-span-7 card-tech p-5 sm:p-6 flex flex-col justify-between">
             <div>
               <h3 className="text-lg sm:text-xl font-bold uppercase text-white mb-4 flex items-center gap-2.5">
