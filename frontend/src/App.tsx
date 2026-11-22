@@ -347,8 +347,8 @@ export function App() {
 
       {/* FOOTER & DISCREET ADMIN LOGIN */}
       <Footer
-        name1={staticData.home.name1}
-        name2={staticData.home.name2}
+        name1={effectiveHomeName1}
+        name2={effectiveHomeName2}
         onAdminClick={() => navigate('/admin/login')}
       />
 

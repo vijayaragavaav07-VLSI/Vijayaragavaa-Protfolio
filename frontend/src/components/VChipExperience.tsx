@@ -45,7 +45,7 @@ export const VChipExperience: React.FC = () => {
 
   return (
     <>
-      {/* ── 1. FULL-SCREEN DARK BACKDROP (ONLY ACTIVE DURING 2000ms LOADING) ── */}
+      {/* ── 1. FULL-SCREEN DARK BACKDROP (ONLY ACTIVE DURING 3500ms LOADING) ── */}
       <div
         className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-[#02060d] transition-opacity duration-700 pointer-events-none ${
           isFullscreen ? 'opacity-100 pointer-events-auto' : 'opacity-0'
