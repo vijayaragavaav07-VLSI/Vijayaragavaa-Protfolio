@@ -38,48 +38,56 @@ graph TD
 
 ## 2. Directory Structure & Module Separation
 
-The repository is decoupled into dedicated root folders to guarantee complete separation between the presentation tier and backend infrastructure:
+The repository is structured to maintain clean separation between the presentation tier, backend infrastructure, and migration tooling:
 
 ```
-c:\prot\
+d:\prot\
 ├── ARCHITECTURE.md              # Complete system design & execution roadmap
-├── stitch_reference.html        # Original Stitch design system & visual prototype
-├── backend/                     # Phase 2 Supabase migrations, schemas & edge functions
+├── .gitignore                   # Workspace Git ignore definitions
+├── backend/                     # Supabase SQL schemas, migrations & backend reference
 │   ├── README.md                # Backend architecture & Supabase onboarding guide
-│   ├── schema.sql               # Planned PostgreSQL DDL schema & RLS policies
-│   └── seed.sql                 # SQL seed data derived from portfolioData.ts
-└── frontend/                    # Phase 1 React 19 + Vite + TailwindCSS v4 SPA
+│   └── schema.sql               # PostgreSQL DDL schema & RLS policies
+├── tools/                       # Tooling & migration archive
+│   └── migration/               # Seed extraction scripts and original reference assets
+└── frontend/                    # React 19 + Vite + TailwindCSS v4 SPA
     ├── index.html               # Semantic HTML entry with JetBrains Mono + Space Grotesk
     ├── vite.config.ts           # Vite config with @tailwindcss/vite and @vitejs/plugin-react
     ├── package.json             # React 19, Lucide React icons, TailwindCSS v4
-    ├── src/
-    │   ├── main.tsx             # Application bootstrap
-    │   ├── App.tsx              # View orchestrator, modal state management, sticky navigation
-    │   ├── index.css            # Tailwind v4 theme tokens, semiconductor grid, cyan glow effects
-    │   ├── types/
-    │   │   └── portfolio.ts     # TypeScript interfaces for all 12 domains
-    │   ├── data/
-    │   │   └── portfolioData.ts # Strongly-typed content model for Vijayaragavaa V
-    │   ├── assets/              # Profile portraits, silicon die shots, FPGA prototype imagery
-    │   └── components/
-    │       ├── Header.tsx       # Sticky glassmorphism header, mobile drawer, RTL resume quick CTA
-    │       ├── Hero.tsx         # 3-column command center: bio, portrait, EDA toolchain telemetry
-    │       ├── About.tsx        # Engineering philosophy, architectural tenets, technical profile
-    │       ├── Skills.tsx       # 6-category matrix: RTL, FPGA, Verification, Protocols, Tools, IoT
-    │       ├── Projects.tsx     # Hardware designs (PARKIFY, Voting Machine, Smart Lift)
-    │       ├── Hackathons.tsx   # Hardware prototype showcase with telemetry metrics & architecture
-    │       ├── Achievements.tsx # IEEE, national hackathon honors, university rank badges
-    │       ├── Certifications.tsx # Industry credentials (IEEE, Xilinx, NPTEL) with modal triggers
-    │       ├── Education.tsx    # Academic journey & coursework at RMK Engineering College
-    │       ├── Experience.tsx   # Research lab & hardware engineering responsibilities
-    │       ├── Gallery.tsx      # High-res hardware lab, FPGA boards, die shots + Lightbox modal
-    │       ├── Contact.tsx      # Terminal-style contact form & direct social dispatch channels
-    │       ├── Resume.tsx       # In-browser PDF Document Viewer modal + direct PDF download
-    │       ├── Footer.tsx       # System telemetry, copyright, and subtle Admin Login trigger
-    │       ├── DocumentViewer.tsx # Interactive modal PDF viewer for RTL Resume & certifications
-    │       ├── ImageLightbox.tsx  # High-resolution modal lightbox for gallery inspection
-    │       ├── AdminLoginModal.tsx# Secure login portal (Phase 1 preview / Phase 2 Auth)
-    │       └── SectionHeader.tsx  # Reusable semiconductor-themed section header
+    ├── netlify.toml             # Netlify deployment and SPA rewrite configuration
+    ├── public/                  # Public web assets (favicon, resume.pdf, redirects)
+    ├── supabase/                # Versioned SQL migrations (001 - 007)
+    ├── docs/                    # Administrative and setup documentation
+    └── src/
+        ├── main.tsx             # Application bootstrap & React Router configuration
+        ├── App.tsx              # View orchestrator, modal state management, sticky navigation
+        ├── index.css            # Tailwind v4 theme tokens, semiconductor grid, cyan glow effects
+        ├── types/               # TypeScript interfaces (portfolio.ts, database.ts)
+        ├── data/                # Strongly-typed portfolio fallback models (portfolioData.ts)
+        ├── assets/              # Profile portraits, silicon die shots, FPGA prototype imagery
+        ├── lib/                 # Supabase client instantiation
+        ├── hooks/               # Custom React hooks (usePortfolioData, useAdminCRUD)
+        ├── services/            # Supabase API services for CRUD operations
+        ├── pages/               # Protected Admin Dashboard & Management pages
+        └── components/          # Modular semiconductor-styled UI components
+            ├── Header.tsx       # Sticky glassmorphic navigation header
+            ├── Hero.tsx         # 3-column command center: bio, portrait, EDA toolchain
+            ├── About.tsx        # Engineering philosophy, dossier specs, VLSI profile
+            ├── Skills.tsx       # 6-category capability matrix (RTL, FPGA, Verification, etc.)
+            ├── Projects.tsx     # Hardware designs (PARKIFY, Voting Machine, Smart Lift)
+            ├── Hackathons.tsx   # Hardware prototype showcase with telemetry metrics
+            ├── Achievements.tsx # IEEE, national hackathon honors, university badges
+            ├── Certifications.tsx # Industry credentials (IEEE, Xilinx, NPTEL)
+            ├── Education.tsx    # Academic journey & coursework at RMKCET
+            ├── Experience.tsx   # Research lab & hardware engineering responsibilities
+            ├── Gallery.tsx      # High-res hardware lab, FPGA boards, die shots
+            ├── Contact.tsx      # Dispatch form & direct social communication channels
+            ├── Resume.tsx       # Curriculum Vitae viewer & PDF download trigger
+            ├── Footer.tsx       # System telemetry, copyright, and discreet Admin Login trigger
+            ├── VChipExperience.tsx # 3.5s 3D semiconductor loader & permanent floating V-chip
+            ├── DocumentViewer.tsx # Interactive modal PDF viewer
+            ├── ImageLightbox.tsx  # High-resolution modal lightbox for image inspection
+            ├── SectionHeader.tsx  # Reusable semiconductor-themed section header
+            └── admin/           # Admin layout, sidebar, tables, and form fields
 ```
 
 ---
