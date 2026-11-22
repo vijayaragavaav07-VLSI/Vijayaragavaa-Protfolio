@@ -1,4 +1,4 @@
-﻿import { useState } from 'react';
+import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { initialPortfolioData } from './data/portfolioData';
 import { usePortfolioData } from './hooks/usePortfolioData';
@@ -28,6 +28,7 @@ import { Gallery } from './components/Gallery';
 import { Contact } from './components/Contact';
 import { Resume } from './components/Resume';
 import { Footer } from './components/Footer';
+import { VChipExperience } from './components/VChipExperience';
 
 // Modals
 import { ImageLightbox } from './components/ImageLightbox';
@@ -273,7 +274,10 @@ export function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[#030609] text-[#e8f1fb] flex flex-col selection:bg-[#00d9ff]/30 selection:text-white">
+    <div className="min-h-screen bg-[#02060d] text-[#f0f6fc] flex flex-col selection:bg-[#00d9ff]/30 selection:text-white relative">
+      {/* 2-Second Centered V-Chip Loader & Permanent Floating V-Chip */}
+      <VChipExperience />
+
       {/* Fixed Sticky Header */}
       <Header
         name1={effectiveHomeName1}

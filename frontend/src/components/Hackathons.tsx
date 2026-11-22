@@ -1,7 +1,7 @@
 ﻿import React from 'react';
 import type { Hackathon } from '../types/portfolio';
 import { SectionHeader } from './SectionHeader';
-import { CheckCircle2, ArrowRight } from 'lucide-react';
+import { CheckCircle2, ArrowRight, Trophy } from 'lucide-react';
 
 interface HackathonsProps {
   hackathons: Hackathon[];
@@ -10,26 +10,27 @@ interface HackathonsProps {
 
 export const Hackathons: React.FC<HackathonsProps> = ({ hackathons, onExamineArchitecture }) => {
   return (
-    <section className="py-24 border-t border-[#0d2238] relative" id="hackathons">
+    <section className="py-10 md:py-14 border-t border-[#102a45]/80 relative" id="hackathons">
       <div className="max-w-[1560px] mx-auto px-4 sm:px-6">
         <SectionHeader
           num="04"
           label="COMPETITIVE ENGINEERING"
-          title="HACKATHONS"
+          title="HACKATHONS & SPRINTS"
           meta="PROTOTYPING HIGH-RELIABILITY HARDWARE UNDER TIME CONSTRAINTS"
         />
 
-        <div className="space-y-8">
+        <div className="space-y-6">
           {hackathons.filter((h) => !h.hide).map((item) => (
             <div
               key={item.title}
-              className="card-tech p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-10 items-center shadow-[0_0_40px_rgba(0,217,255,0.08)] hover:shadow-[0_0_50px_rgba(0,217,255,0.18)] transition-all"
+              className="card-tech p-5 sm:p-7 grid grid-cols-1 lg:grid-cols-12 gap-6 items-center shadow-[0_0_30px_rgba(0,217,255,0.06)] hover:shadow-[0_0_40px_rgba(0,217,255,0.15)] transition-all"
             >
               {/* Left Column: Details & Metrics (7 cols) */}
               <div className="lg:col-span-7 flex flex-col justify-between">
                 <div>
-                  <div className="flex flex-wrap items-center gap-3 mb-4">
-                    <span className="bg-[#00d9ff] text-[#001018] font-mono font-bold text-xs px-3 py-1.5 rounded-sm tracking-wider uppercase shadow-[0_0_12px_rgba(0,217,255,0.4)]">
+                  <div className="flex flex-wrap items-center gap-2.5 mb-3">
+                    <span className="bg-[#00d9ff] text-[#020812] font-mono font-bold text-xs px-2.5 py-1 rounded tracking-wider uppercase shadow-[0_0_12px_rgba(0,217,255,0.4)] flex items-center gap-1.5">
+                      <Trophy className="w-3.5 h-3.5" />
                       {item.award}
                     </span>
                     <span className="font-mono text-xs text-[#8ea3bd] tracking-widest uppercase">
@@ -37,39 +38,39 @@ export const Hackathons: React.FC<HackathonsProps> = ({ hackathons, onExamineArc
                     </span>
                   </div>
 
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold uppercase text-white tracking-tight mb-4">
+                  <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold uppercase text-white tracking-tight mb-2.5">
                     {item.title}
                   </h3>
 
-                  <p className="text-base text-[#8ea3bd] leading-relaxed mb-6 font-normal">
+                  <p className="text-xs sm:text-sm text-[#8ea3bd] leading-relaxed mb-4 font-normal">
                     {item.desc}
                   </p>
 
                   {/* 3 Metric Boxes */}
-                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 my-6 font-mono">
-                    <div className="border border-[#10304d] bg-[#06182a] p-3.5 rounded">
-                      <small className="block text-[10px] text-[#8ea3bd] uppercase tracking-wider mb-1">
+                  <div className="grid grid-cols-1 sm:grid-cols-3 gap-2.5 my-4 font-mono">
+                    <div className="border border-[#102a45] bg-[#051528] p-2.5 rounded">
+                      <small className="block text-[9.5px] text-[#8ea3bd] uppercase tracking-wider mb-0.5">
                         ROLE:
                       </small>
-                      <span className="text-xs font-semibold text-white">
+                      <span className="text-[11.5px] font-semibold text-white">
                         {item.role}
                       </span>
                     </div>
 
-                    <div className="border border-[#10304d] bg-[#06182a] p-3.5 rounded">
-                      <small className="block text-[10px] text-[#8ea3bd] uppercase tracking-wider mb-1">
+                    <div className="border border-[#102a45] bg-[#051528] p-2.5 rounded">
+                      <small className="block text-[9.5px] text-[#8ea3bd] uppercase tracking-wider mb-0.5">
                         TEAM SIZE:
                       </small>
-                      <span className="text-xs font-semibold text-white">
+                      <span className="text-[11.5px] font-semibold text-white">
                         {item.team}
                       </span>
                     </div>
 
-                    <div className="border border-[#10304d] bg-[#06182a] p-3.5 rounded">
-                      <small className="block text-[10px] text-[#8ea3bd] uppercase tracking-wider mb-1">
+                    <div className="border border-[#102a45] bg-[#051528] p-2.5 rounded">
+                      <small className="block text-[9.5px] text-[#8ea3bd] uppercase tracking-wider mb-0.5">
                         OUTCOME:
                       </small>
-                      <b className="text-xs font-bold text-[#34d399]">
+                      <b className="text-[11.5px] font-bold text-[#34d399]">
                         {item.outcome}
                       </b>
                     </div>
@@ -77,17 +78,17 @@ export const Hackathons: React.FC<HackathonsProps> = ({ hackathons, onExamineArc
                 </div>
 
                 {/* Bottom Action Row */}
-                <div className="flex flex-wrap items-center gap-5 pt-4">
+                <div className="flex flex-wrap items-center gap-4 pt-2">
                   <button
                     onClick={() => onExamineArchitecture(item)}
-                    className="btn-primary"
+                    className="btn-primary py-2 px-3 text-xs"
                   >
                     <span>Examine Architecture</span>
-                    <ArrowRight className="w-4 h-4" />
+                    <ArrowRight className="w-3.5 h-3.5" />
                   </button>
 
-                  <span className="font-mono text-xs text-[#8ea3bd] flex items-center gap-1.5 uppercase tracking-wider">
-                    <CheckCircle2 className="w-4 h-4 text-[#00d9ff]" />
+                  <span className="font-mono text-[11px] text-[#8ea3bd] flex items-center gap-1.5 uppercase tracking-wider">
+                    <CheckCircle2 className="w-3.5 h-3.5 text-[#00d9ff]" />
                     Verified Accreditation
                   </span>
                 </div>
@@ -98,19 +99,17 @@ export const Hackathons: React.FC<HackathonsProps> = ({ hackathons, onExamineArc
                 <div className="lg:col-span-5">
                   <div
                     onClick={() => onExamineArchitecture(item)}
-                    className="cursor-pointer border border-[#10304d] rounded-lg overflow-hidden shadow-[0_0_40px_rgba(0,217,255,0.2)] group relative bg-[#06121f]"
+                    className="relative aspect-[16/10] overflow-hidden rounded-lg border border-[#102a45] bg-[#051528] cursor-pointer group hover:border-[#00d9ff]/70 transition-all shadow-[0_0_20px_rgba(0,0,0,0.5)]"
                   >
-                    <div className="h-64 sm:h-80 overflow-hidden relative">
-                      <img
-                        src={item.img}
-                        alt={item.title}
-                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-[#06121f] via-transparent to-transparent opacity-60" />
-                    </div>
-                    <div className="flex justify-between items-center p-3.5 bg-[#050c16] border-t border-[#10304d] font-mono text-xs">
-                      <span className="text-white font-medium">{item.prototype_label || "LIVE PROTOTYPE BENCH"}</span>
-                      <span className="text-[#00d9ff] font-semibold">{item.sprint_label || "PITCH: 36 HRS SPRINT"}</span>
+                    <img
+                      src={item.img}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    />
+                    <div className="absolute inset-0 bg-[#020812]/50 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+                      <span className="font-mono text-xs text-[#00d9ff] bg-[#051528]/90 border border-[#00d9ff]/50 px-3 py-1.5 rounded uppercase tracking-wider shadow-lg">
+                        Inspect Diagram ↗
+                      </span>
                     </div>
                   </div>
                 </div>

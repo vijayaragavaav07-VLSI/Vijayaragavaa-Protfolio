@@ -14,6 +14,7 @@ ALTER TABLE public.home_content
   ADD COLUMN IF NOT EXISTS status_cap         TEXT NOT NULL DEFAULT 'SYNTHESIS READY';
 
 -- ABOUT CONTENT extended fields
+
 ALTER TABLE public.about_content
   ADD COLUMN IF NOT EXISTS profile_icon_url   TEXT,
   ADD COLUMN IF NOT EXISTS philosophy_title   TEXT NOT NULL DEFAULT 'SILICON ENGINEERING PHILOSOPHY',

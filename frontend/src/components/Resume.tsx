@@ -18,28 +18,28 @@ export const Resume: React.FC<ResumeProps> = ({ data, onViewViewer }) => {
   };
 
   return (
-    <section className="py-24 border-t border-[#0d2238] relative" id="resume">
+    <section className="py-10 md:py-14 border-t border-[#102a45]/80 relative" id="resume">
       <div className="max-w-[1100px] mx-auto px-4 sm:px-6">
-        <div className="card-tech p-8 sm:p-14 text-center flex flex-col items-center shadow-[0_0_50px_rgba(0,217,255,0.1)] border-[#00d9ff]/40">
+        <div className="card-tech p-6 sm:p-10 text-center flex flex-col items-center shadow-[0_0_40px_rgba(0,217,255,0.08)] border-[#00d9ff]/30">
           
           {/* Centered Document Icon */}
-          <div className="w-20 h-20 border border-[#00d9ff] rounded-lg flex items-center justify-center font-mono font-bold text-3xl text-[#00d9ff] bg-[#062434] mb-6 shadow-[0_0_25px_rgba(0,217,255,0.3)]">
-            <FileText className="w-9 h-9" />
+          <div className="w-16 h-16 border border-[#00d9ff] rounded-xl flex items-center justify-center font-mono font-bold text-2xl text-[#00d9ff] bg-[#051a2d] mb-4 shadow-[0_0_20px_rgba(0,217,255,0.3)]">
+            <FileText className="w-8 h-8" />
           </div>
 
-          <h2 className="text-3xl sm:text-4xl font-bold uppercase tracking-tight text-white mb-2">
+          <h2 className="text-2xl sm:text-3xl font-bold uppercase tracking-tight text-white mb-1.5">
             CURRICULUM VITAE
           </h2>
 
-          <div className="font-mono text-sm sm:text-base text-[#00d9ff] font-semibold tracking-wider mb-6">
-            {data.fname}
+          <div className="font-mono text-xs sm:text-sm text-[#00d9ff] font-semibold tracking-wider mb-4">
+            {data.fname || 'VIJAYARAGAVAA_V_RESUME.pdf'}
           </div>
 
-          <p className="text-base sm:text-lg text-[#8ea3bd] max-w-2xl mx-auto leading-relaxed mb-8 font-normal">
-            {data.desc}
+          <p className="text-xs sm:text-sm text-[#8ea3bd] max-w-xl mx-auto leading-relaxed mb-6 font-normal">
+            {data.desc || 'Comprehensive technical breakdown covering RTL architecture, SystemVerilog verification testbenches, FPGA syntheses, and academic honors.'}
           </p>
 
-          <div className="flex flex-wrap items-center justify-center gap-4">
+          <div className="flex flex-wrap items-center justify-center gap-3">
             <button
               onClick={handleDownload}
               className="btn-primary"
@@ -53,7 +53,7 @@ export const Resume: React.FC<ResumeProps> = ({ data, onViewViewer }) => {
               className="btn-default"
             >
               <Eye className="w-4 h-4 text-[#00d9ff]" />
-              <span>VIEW IN DOCUMENT VIEWER</span>
+              <span>IN-BROWSER VIEWER</span>
             </button>
           </div>
         </div>
