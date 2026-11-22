@@ -1,134 +1,418 @@
-# Architecture Specification & Engineering Portfolio Blueprint
-**Portfolio Owner:** VIJAYARAGAVAA V — Aspiring RTL Design & Verification Engineer  
-**Core Disciplines:** Electronics & Communication Engineering, VLSI, RTL Design (Verilog HDL/SystemVerilog), FPGA, Digital Design, Verification, IoT, AI + Hardware Systems  
+# ⚡ Vijayaragavaa V | Engineering Portfolio
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=rect&color=0:030609,50:07111f,100:10304d&height=180&section=header&text=VIJAYARAGAVAA%20V&fontSize=42&fontColor=00D9FF&animation=fadeIn&fontAlignY=45&desc=RTL%20DESIGN%20%7C%20VLSI%20%7C%20DIGITAL%20SYSTEMS&descSize=15&descAlignY=70&descColor=FFFFFF" width="100%" />
+</p>
+
+<p align="center">
+  <strong>Aspiring RTL Design & Design Verification Engineer</strong>
+  <br/>
+  Exploring the intersection of VLSI, Digital Electronics, FPGA, Embedded Systems, IoT and AI.
+</p>
+
+<p align="center">
+  <a href="https://vijayaragavaa-protfolio.netlify.app/">
+    <img src="https://img.shields.io/badge/🌐_Live_Portfolio-00D9FF?style=for-the-badge&logoColor=black" />
+  </a>
+  <a href="https://github.com/vijayaragavaav07-VLSI">
+    <img src="https://img.shields.io/badge/GitHub-Profile-181717?style=for-the-badge&logo=github" />
+  </a>
+  <a href="https://www.linkedin.com/in/vijayaragavaa057-vlsi/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin" />
+  </a>
+</p>
 
 ---
 
-## 1. High-Level System Architecture
+## 👨‍💻 About the Project
+
+Welcome to my personal engineering portfolio!
+
+This repository contains the source code for my interactive engineering portfolio, designed to showcase my academic journey, technical skills, hardware projects, hackathon experiences, achievements and interests in semiconductor technology.
+
+As an aspiring **RTL Design and Verification Engineer**, I am continuously developing my knowledge of digital electronics, Verilog HDL, FPGA development, SystemVerilog and hardware design.
+
+The portfolio combines a modern web experience with a semiconductor-inspired visual identity, representing my interest in both hardware engineering and software development.
+
+**Portfolio Owner:** Vijayaragavaa V  
+**Primary Domain:** VLSI Design & Verification  
+**Project Type:** Personal Engineering Portfolio  
+**Deployment:** Netlify  
+**Repository Status:** Phase 1 Completed | Phase 2 Planned
+
+---
+
+## 🚀 Live Project
+
+| Resource | Link |
+|---|---|
+| Live Website | [Visit Portfolio](https://vijayaragavaa-protfolio.netlify.app/) |
+| GitHub Repository | [View Source Code](https://github.com/vijayaragavaav07-VLSI/Vijayaragavaa-Protfolio) |
+| GitHub Profile | [Vijayaragavaa V](https://github.com/vijayaragavaav07-VLSI) |
+| LinkedIn | [Connect with Me](https://www.linkedin.com/in/vijayaragavaa057-vlsi/) |
+
+---
+
+## ✨ Key Features
+
+- **Engineering Profile:** Introduction, career interests and professional overview.
+- **About Me:** Academic background, engineering interests and technical journey.
+- **Technical Skills:** Organized skill matrix covering VLSI, RTL, FPGA, verification, embedded systems and software.
+- **Projects Showcase:** Hardware, digital design, IoT and software projects.
+- **Hackathons:** Project competitions, prototypes and engineering experiences.
+- **Achievements:** Academic and technical accomplishments.
+- **Certifications:** Professional learning and technical credentials.
+- **Education:** Academic journey and relevant coursework.
+- **Experience:** Internship and practical engineering exposure.
+- **Technical Gallery:** Hardware prototypes, FPGA boards and engineering images.
+- **Resume Viewer:** Interactive PDF viewing and download functionality.
+- **Contact Section:** Professional communication and social links.
+
+### Interactive Experiences
+
+- Semiconductor-inspired loading animation.
+- Floating V-chip visual element.
+- Sticky glassmorphic navigation.
+- Interactive PDF document viewer.
+- High-resolution image lightbox.
+- Admin login interface prepared for future backend integration.
+
+---
+
+## 🧰 Technology Stack
+
+### Frontend Development
+
+<p>
+  <img src="https://img.shields.io/badge/React-19-61DAFB?style=for-the-badge&logo=react&logoColor=black"/>
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Tailwind_CSS-v4-06B6D4?style=for-the-badge&logo=tailwindcss&logoColor=white"/>
+</p>
+
+### Hardware & Engineering
+
+<p>
+  <img src="https://img.shields.io/badge/Verilog-HDL-8A2BE2?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/RTL-Design-00D9FF?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/FPGA-Vivado-FF6600?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Digital-Electronics-34D399?style=for-the-badge"/>
+</p>
+
+### Backend & Deployment
+
+<p>
+  <img src="https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=black"/>
+  <img src="https://img.shields.io/badge/PostgreSQL-4169E1?style=for-the-badge&logo=postgresql&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Netlify-00C7B7?style=for-the-badge&logo=netlify&logoColor=white"/>
+  <img src="https://img.shields.io/badge/GitHub-181717?style=for-the-badge&logo=github"/>
+</p>
+
+**Additional Tools:** VS Code, Git, GitHub, Lucide React and Google Stitch.
+
+---
+
+## 🏗️ System Architecture
+
+The portfolio follows a modular frontend architecture with a planned Supabase backend for future content management.
 
 ```mermaid
-graph TD
-    subgraph Client Layer ["Client Layer (Frontend)"]
-        UI["React 19 + Vite 8 SPA"]
-        TS["TypeScript Data Layer (portfolioData.ts)"]
-        CSS["TailwindCSS v4 Design System (index.css)"]
-        MODALS["Modals: PDF Viewer | Lightbox | Admin Login"]
-    end
+flowchart TD
+    A[Portfolio Visitor] --> B[React 19 Frontend]
+    B --> C[TypeScript Data Layer]
+    B --> D[Tailwind CSS Design System]
 
-    subgraph CDN ["Edge Delivery & Hosting"]
-        Netlify["Netlify Edge CDN"]
-    end
+    C --> E[Portfolio Sections]
+    E --> F[Projects and Skills]
+    E --> G[Achievements and Experience]
+    E --> H[Gallery and Resume]
 
-    subgraph Backend Layer ["Backend Layer (Phase 2 - Supabase)"]
-        Auth["Supabase GoTrue Auth (Admin Role)"]
-        Postgres[("PostgreSQL Database")]
-        Storage["Supabase Storage (Resumes, Die Shots, Project Media)"]
-        RLS["Row Level Security (Public Read, Admin Write)"]
-    end
+    B --> I[Netlify Hosting]
+    B -. Phase 2 .-> J[Supabase Backend]
 
-    UI --> Netlify
-    UI -.->|Phase 2 Query Client| Postgres
-    UI -.->|Phase 2 Media Assets| Storage
-    MODALS -.->|Phase 2 Admin JWT| Auth
-    Auth --> Postgres
-    RLS --> Postgres
+    J --> K[PostgreSQL Database]
+    J --> L[Supabase Storage]
+    J --> M[Supabase Authentication]
+
+    M --> N[Admin Dashboard]
+    K --> O[Portfolio Content]
+    L --> P[Media Assets]
 ```
+
+### Architecture Layers
+
+| Layer | Technology | Responsibility |
+|---|---|---|
+| Presentation | React 19 | User interface and components |
+| Data | TypeScript | Structured portfolio data |
+| Styling | Tailwind CSS v4 | Visual design system |
+| Build | Vite 8 | Development and production builds |
+| Hosting | Netlify | Website deployment |
+| Database | Supabase PostgreSQL | Planned content management |
+| Authentication | Supabase Auth | Planned admin authentication |
+| Storage | Supabase Storage | Planned media management |
 
 ---
 
-## 2. Directory Structure & Module Separation
+## 🎨 Visual Design System
 
-The repository is structured to maintain clean separation between the presentation tier, backend infrastructure, and migration tooling:
+The interface uses a dark semiconductor-inspired theme with electric cyan highlights.
 
-```
-d:\prot\
-├── ARCHITECTURE.md              # Complete system design & execution roadmap
-├── .gitignore                   # Workspace Git ignore definitions
-├── backend/                     # Supabase SQL schemas, migrations & backend reference
-│   ├── README.md                # Backend architecture & Supabase onboarding guide
-│   └── schema.sql               # PostgreSQL DDL schema & RLS policies
-├── tools/                       # Tooling & migration archive
-│   └── migration/               # Seed extraction scripts and original reference assets
-└── frontend/                    # React 19 + Vite + TailwindCSS v4 SPA
-    ├── index.html               # Semantic HTML entry with JetBrains Mono + Space Grotesk
-    ├── vite.config.ts           # Vite config with @tailwindcss/vite and @vitejs/plugin-react
-    ├── package.json             # React 19, Lucide React icons, TailwindCSS v4
-    ├── netlify.toml             # Netlify deployment and SPA rewrite configuration
-    ├── public/                  # Public web assets (favicon, resume.pdf, redirects)
-    ├── supabase/                # Versioned SQL migrations (001 - 007)
-    ├── docs/                    # Administrative and setup documentation
+| Design Element | Value |
+|---|---|
+| Background | `#030609` |
+| Card Surface | `#07111f` |
+| Card Border | `#10304d` |
+| Primary Accent | `#00d9ff` |
+| Secondary Accent | `#a78bfa` |
+| Success | `#34d399` |
+| Warning | `#fbbf24` |
+| Primary Font | Space Grotesk |
+| Monospace Font | JetBrains Mono |
+| Grid Pattern | 32px × 32px |
+
+The visual language is inspired by semiconductor fabrication environments, chip layouts, electronic circuits, engineering dashboards and EDA interfaces.
+
+---
+
+## 📂 Repository Structure
+
+```text
+Vijayaragavaa-Protfolio/
+│
+├── ARCHITECTURE.md
+├── README.md
+├── .gitignore
+│
+├── backend/
+│   ├── README.md
+│   └── schema.sql
+│
+├── tools/
+│   └── migration/
+│
+└── frontend/
+    ├── index.html
+    ├── package.json
+    ├── vite.config.ts
+    ├── netlify.toml
+    │
+    ├── public/
+    │   ├── favicon
+    │   └── resume.pdf
+    │
+    ├── supabase/
+    │   └── migrations/
+    │
+    ├── docs/
+    │
     └── src/
-        ├── main.tsx             # Application bootstrap & React Router configuration
-        ├── App.tsx              # View orchestrator, modal state management, sticky navigation
-        ├── index.css            # Tailwind v4 theme tokens, semiconductor grid, cyan glow effects
-        ├── types/               # TypeScript interfaces (portfolio.ts, database.ts)
-        ├── data/                # Strongly-typed portfolio fallback models (portfolioData.ts)
-        ├── assets/              # Profile portraits, silicon die shots, FPGA prototype imagery
-        ├── lib/                 # Supabase client instantiation
-        ├── hooks/               # Custom React hooks (usePortfolioData, useAdminCRUD)
-        ├── services/            # Supabase API services for CRUD operations
-        ├── pages/               # Protected Admin Dashboard & Management pages
-        └── components/          # Modular semiconductor-styled UI components
-            ├── Header.tsx       # Sticky glassmorphic navigation header
-            ├── Hero.tsx         # 3-column command center: bio, portrait, EDA toolchain
-            ├── About.tsx        # Engineering philosophy, dossier specs, VLSI profile
-            ├── Skills.tsx       # 6-category capability matrix (RTL, FPGA, Verification, etc.)
-            ├── Projects.tsx     # Hardware designs (PARKIFY, Voting Machine, Smart Lift)
-            ├── Hackathons.tsx   # Hardware prototype showcase with telemetry metrics
-            ├── Achievements.tsx # IEEE, national hackathon honors, university badges
-            ├── Certifications.tsx # Industry credentials (IEEE, Xilinx, NPTEL)
-            ├── Education.tsx    # Academic journey & coursework at RMKCET
-            ├── Experience.tsx   # Research lab & hardware engineering responsibilities
-            ├── Gallery.tsx      # High-res hardware lab, FPGA boards, die shots
-            ├── Contact.tsx      # Dispatch form & direct social communication channels
-            ├── Resume.tsx       # Curriculum Vitae viewer & PDF download trigger
-            ├── Footer.tsx       # System telemetry, copyright, and discreet Admin Login trigger
-            ├── VChipExperience.tsx # 3.5s 3D semiconductor loader & permanent floating V-chip
-            ├── DocumentViewer.tsx # Interactive modal PDF viewer
-            ├── ImageLightbox.tsx  # High-resolution modal lightbox for image inspection
-            ├── SectionHeader.tsx  # Reusable semiconductor-themed section header
-            └── admin/           # Admin layout, sidebar, tables, and form fields
+        ├── main.tsx
+        ├── App.tsx
+        ├── index.css
+        │
+        ├── types/
+        ├── data/
+        ├── assets/
+        ├── lib/
+        ├── hooks/
+        ├── services/
+        ├── pages/
+        │
+        └── components/
+            ├── Header.tsx
+            ├── Hero.tsx
+            ├── About.tsx
+            ├── Skills.tsx
+            ├── Projects.tsx
+            ├── Hackathons.tsx
+            ├── Achievements.tsx
+            ├── Certifications.tsx
+            ├── Education.tsx
+            ├── Experience.tsx
+            ├── Gallery.tsx
+            ├── Contact.tsx
+            ├── Resume.tsx
+            ├── Footer.tsx
+            ├── VChipExperience.tsx
+            ├── DocumentViewer.tsx
+            ├── ImageLightbox.tsx
+            ├── SectionHeader.tsx
+            │
+            └── admin/
 ```
 
 ---
 
-## 3. Visual Design System Specification
+## ⚙️ Getting Started
 
-| Token / Element | Value / Rule | Description |
-| :--- | :--- | :--- |
-| **Primary Background** | `#030609` | Deep space black / obsidian vacuum |
-| **Card Surface** | `#07111f` | Dark silicon slate with subtle cyan boundary lines |
-| **Card Border** | `#10304d` | Subdued circuit trace border |
-| **Primary Accent** | `#00d9ff` | Electric Cyan (glows, badges, buttons, active states) |
-| **Secondary Accent** | `#a78bfa` | Electric Violet (verification & academic markers) |
-| **Success / Valid** | `#34d399` | Hardware green (timing closure, simulation passed) |
-| **Warning / Alert** | `#fbbf24` | Amber (critical clocks, synthesis constraints) |
-| **Body Typography** | `Space Grotesk` | Modern, clean, geometric sans-serif for readability |
-| **Tech / Code Typography** | `JetBrains Mono` | High-precision monospace for telemetry, addresses, registers |
-| **Grid Overlay** | `.tech-grid` | 32px x 32px subtle semiconductor circuit grid pattern |
+Follow these instructions to run the project locally.
+
+### Prerequisites
+
+- Node.js (compatible with the installed Vite version)
+- npm
+- Git
+
+### 1. Clone the Repository
+
+```bash
+git clone https://github.com/vijayaragavaav07-VLSI/Vijayaragavaa-Protfolio.git
+```
+
+### 2. Navigate to the Frontend
+
+```bash
+cd Vijayaragavaa-Protfolio/frontend
+```
+
+### 3. Install Dependencies
+
+```bash
+npm install
+```
+
+### 4. Start the Development Server
+
+```bash
+npm run dev
+```
+
+### 5. Open in Browser
+
+```text
+http://localhost:5173/
+```
+
+### 6. Build for Production
+
+```bash
+npm run build
+```
+
+### 7. Preview Production Build
+
+```bash
+npm run preview
+```
 
 ---
 
-## 4. Phase 1 vs. Phase 2 Execution Plan
+## 📌 Development Roadmap
 
-### Phase 1: Standalone Frontend Website (COMPLETED & VERIFIED)
-- [x] Full UI match against Google Stitch reference design.
-- [x] All 12 required portfolio sections implemented with authentic engineering data.
-- [x] Interactive modals:
-  - Document Viewer (PDF Resume modal).
-  - Image Lightbox (Lab & FPGA board gallery inspection).
-  - Admin Login modal stub with clear Phase 2 connectivity indicators.
-- [x] Zero build errors with `tsc -b && vite build` (Verified).
-- [x] Live Vite dev server running on `http://localhost:5173/`.
+### Phase 1 — Frontend Development
 
-### Phase 2: Full-Stack Integration & CMS (UPCOMING)
-1. **Supabase Database Setup:**
-   - Deploy PostgreSQL database with tables: `projects`, `skills`, `achievements`, `certifications`, `gallery_items`, `contact_messages`.
-   - Implement Row Level Security (RLS): Public can `SELECT`, authenticated admin can `INSERT`, `UPDATE`, `DELETE`.
-2. **Supabase Storage:**
-   - Bucket `portfolio-media`: Images, die shots, schematics, resumes.
-3. **Admin CMS Dashboard:**
-   - Authenticated route `/admin` with edit/add/delete forms for projects, metrics, and resume uploads.
-4. **CI/CD & Deployment:**
-   - Push to GitHub repository.
-   - Continuous deployment on Netlify with custom domain and SSL.
+**Status: Completed**
+
+- [x] React-based portfolio application.
+- [x] Modular component architecture.
+- [x] Semiconductor-inspired UI design.
+- [x] Responsive portfolio sections.
+- [x] Interactive resume viewer.
+- [x] Image lightbox.
+- [x] Admin login interface stub.
+- [x] TypeScript integration.
+- [x] Production build verification.
+- [x] Netlify deployment.
+
+### Phase 2 — Backend & Content Management
+
+**Status: Planned**
+
+- [ ] Supabase project integration.
+- [ ] PostgreSQL database configuration.
+- [ ] Portfolio content management tables.
+- [ ] Row Level Security implementation.
+- [ ] Admin authentication.
+- [ ] Protected admin dashboard.
+- [ ] Project and achievement CRUD operations.
+- [ ] Resume and image uploads through Supabase Storage.
+- [ ] Contact message management.
+
+### Phase 3 — Future Enhancements
+
+- [ ] Advanced project filtering.
+- [ ] Technical blog and engineering notes.
+- [ ] FPGA simulation and RTL project demonstrations.
+- [ ] SystemVerilog verification project showcase.
+- [ ] Improved performance and accessibility.
+- [ ] Automated deployment and quality checks.
+
+---
+
+## 🚀 Deployment
+
+The frontend is deployed using Netlify.
+
+**Live Website:**  
+https://vijayaragavaa-protfolio.netlify.app/
+
+The planned deployment workflow:
+
+```mermaid
+flowchart LR
+    A[Local Development] --> B[GitHub Repository]
+    B --> C[Netlify Build]
+    C --> D[Production Deployment]
+    D --> E[Live Portfolio]
+```
+
+---
+
+## 🔐 Security Considerations
+
+For the planned Supabase integration:
+
+- Enable Row Level Security on database tables.
+- Allow public read access only to intended portfolio content.
+- Restrict write operations to authorized administrators.
+- Never expose the Supabase service-role key in frontend code.
+- Keep sensitive configuration in environment variables.
+- Validate user input before database operations.
+
+---
+
+## 👨‍🎓 About Me
+
+I'm Vijayaragavaa V, an undergraduate engineering student focused on developing my expertise in VLSI and digital hardware design.
+
+### My Core Interests
+
+- Digital Electronics and Logic Design
+- Verilog HDL and RTL Design
+- SystemVerilog and Design Verification
+- FPGA Development
+- Semiconductor Technology
+- Embedded Systems and ESP32
+- IoT and Real-Time Monitoring
+- AI + Hardware Applications
+
+### My Career Objective
+
+To develop strong technical expertise in RTL Design and Design Verification, contribute to innovative semiconductor technologies and build reliable digital systems.
+
+---
+
+## 🤝 Connect With Me
+
+<p align="center">
+  <a href="https://github.com/vijayaragavaav07-VLSI">
+    <img src="https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github"/>
+  </a>
+  <a href="https://www.linkedin.com/in/vijayaragavaa057-vlsi/">
+    <img src="https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin"/>
+  </a>
+  <a href="https://vijayaragavaa-protfolio.netlify.app/">
+    <img src="https://img.shields.io/badge/Portfolio-Visit-00D9FF?style=for-the-badge"/>
+  </a>
+</p>
+
+---
+
+<p align="center">
+  <strong>⚡ Engineering the Future, One Bit at a Time.</strong>
+  <br/>
+  <sub>VLSI × RTL Design × Verification × FPGA × Embedded Systems × AI</sub>
+  <br/><br/>
+  <strong>Keep Learning. Keep Building. Keep Innovating.</strong>
+</p>
