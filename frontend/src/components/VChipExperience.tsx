@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from 'react';
 
 export const VChipExperience: React.FC = () => {
-  // Phase: 'loading' (0 - 2000ms) -> 'transitioning' (2000ms - 2800ms) -> 'floating' (permanent)
+  // Phase: 'loading' (0 - 3500ms) -> 'transitioning' (3500ms - 4300ms) -> 'floating' (permanent)
   const [phase, setPhase] = useState<'loading' | 'transitioning' | 'floating'>('loading');
   const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    // Progress bar animation from 0% to 100% across 2000ms
-    const intervalTime = 20; // 50 updates
-    const increment = 100 / (2000 / intervalTime);
+    // Progress bar animation from 0% to 100% across 3500ms
+    const duration = 3500;
+    const intervalTime = 20;
+    const increment = 100 / (duration / intervalTime);
     const progressTimer = setInterval(() => {
       setProgress((prev) => {
         const next = prev + increment;
@@ -16,17 +17,17 @@ export const VChipExperience: React.FC = () => {
       });
     }, intervalTime);
 
-    // EXACT 2000ms timer
+    // EXACT 3500ms (3.5 seconds) timer
     const transitionTimer = setTimeout(() => {
       clearInterval(progressTimer);
       setProgress(100);
       setPhase('transitioning');
-    }, 2000);
+    }, duration);
 
     // After transition completes (800ms transition), lock into permanent floating mode
     const floatingTimer = setTimeout(() => {
       setPhase('floating');
-    }, 2800);
+    }, duration + 800);
 
     return () => {
       clearInterval(progressTimer);
