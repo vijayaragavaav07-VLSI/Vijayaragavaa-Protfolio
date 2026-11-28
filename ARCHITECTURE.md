@@ -44,6 +44,7 @@ The repository is structured to maintain clean separation between the presentati
 d:\prot\
 ├── ARCHITECTURE.md              # Complete system design & execution roadmap
 ├── .gitignore                   # Workspace Git ignore definitions
+├── netlify.toml                 # Builds frontend/ and configures the SPA rewrite
 ├── backend/                     # Supabase SQL schemas, migrations & backend reference
 │   ├── README.md                # Backend architecture & Supabase onboarding guide
 │   └── schema.sql               # PostgreSQL DDL schema & RLS policies
@@ -53,7 +54,6 @@ d:\prot\
     ├── index.html               # Semantic HTML entry with JetBrains Mono + Space Grotesk
     ├── vite.config.ts           # Vite config with @tailwindcss/vite and @vitejs/plugin-react
     ├── package.json             # React 19, Lucide React icons, TailwindCSS v4
-    ├── netlify.toml             # Netlify deployment and SPA rewrite configuration
     ├── public/                  # Public web assets (favicon, resume.pdf, redirects)
     ├── supabase/                # Versioned SQL migrations (001 - 007)
     ├── docs/                    # Administrative and setup documentation
